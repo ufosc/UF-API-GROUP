@@ -17,10 +17,10 @@ class User:
         """
         recent_line = f"\t Their most recent problem was {self.recent_problem}.\n" if self.recent else ""
         return f"Username: \t{self.name}\n" \
-               f"Rank: \t{self.rank}\n" \
+               f"Rank: \t\t{self.rank}\n\n" \
                f"This user is{' ' if self.recent else ' not '}active.\n" \
                f"{recent_line}" \
-               f"Number of completed problems: ({self.completed_total})\n" \
+               f"\nNumber of completed problems: ({self.completed_total})\n" \
                f"\tEasy: {self.completed_list[0]}\n" \
                f"\tMedium: {self.completed_list[1]}\n" \
                f"\tHard: {self.completed_list[2]}\n" \
