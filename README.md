@@ -1,31 +1,35 @@
-# UF-API-GROUP (LEETCODE API BRANCH)
+# What Is This?
 
-This branch is for the development of the Leetcode API. Upon being given a username, `request` and `BeautifulSoup` scrape and parse the necessary data *(number of completed problems, ranking, etc.)* This data is then stored in an object and is returned.
+This is the repository for UF Open Source Club's API development group. We meet biweekly and program APIs for personal and public use.
 
-Note: The API is not currently functional.
+# How to Get Started?
 
-<!-- GETTING STARTED -->
-## Getting Started
+For most of our APIs we are using the Python API framework "Fast API." The basic imports are `fastapi` and `uvicorn[standard]`.
 
-This is an example of how you may give instructions on setting up UF-API-GROUP locally.
-To get a local copy up and running follow these simple example steps.   
+To get a simple, starter API going, simply run `pip install fastapi` and `pip install uvicorn[standard]` in your Python environment
+to get those imports functional. `fastapi` is the main framework, whereas `uvicorn` is for testing the API on our localhost.
 
-### Installation
+Include this bit of "Hello world" boilerplate in a `main.py` file...
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/ufosc/UF-API-GROUP.git
-   ```
-2. Install python packages
-   ```sh
-   pip install beautifulsoup4
-   ```
+```python
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+from typing import Union
 
-<!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+from fastapi import FastAPI
 
-* [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)
+app = FastAPI()
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
+
+
+@app.get("/items/{item_id}")
+def read_item(item_id: int, q: Union[str, None] = None):
+    return {"item_id": item_id, "q": q}
+	
+```
+
+And voila! If you run `uvicorn main:app --reload` in your terminal, it should get a test server up and running on
+http://127.0.0.1:8000.
