@@ -1,6 +1,15 @@
 import requests
+import uvicorn
 from bs4 import BeautifulSoup as bs
+from typing import Union
+from fastapi import FastAPI
 from leetcode_constants import *
+
+app = FastAPI()
+
+@app.get("/lcapi/{username}")
+def read_item(username: str):
+    return leetcodeScrape(username)
 
 
 class User:
@@ -16,14 +25,14 @@ class User:
         Returns attributes in easily readable string format.
         """
         recent_line = f"\t Their most recent problem was {self.recent_problem}.\n" if self.recent else ""
-        return f"Username: \t{self.name}\n" \
+        return "Username: \t{self.name}\n" \
                f"Rank: \t\t{self.rank}\n\n" \
                f"This user is{' ' if self.recent else ' not '}active.\n" \
                f"{recent_line}" \
                f"\nNumber of completed problems: ({self.completed_total})\n" \
                f"\tEasy: {self.completed_list[0]}\n" \
                f"\tMedium: {self.completed_list[1]}\n" \
-               f"\tHard: {self.completed_list[2]}\n" \
+               f"\tHard: {self.completed_list[2]}\n"
 
 
     def __str__(self):
@@ -33,15 +42,19 @@ class User:
         return self.getAttributes()
 
 
-def main():
+def leetcodeScrape(username: str):
     # Initialize user object
     user = User()
 
     # Get the user's LC URL
-    user.name = "cbloodsworth"  # TODO: Change this to pull from API request
+    user.name = username
 
     # Get Raw HTML
-    r = requests.get("https://leetcode.com/" + user.name)
+    try:
+        r = requests.get("https://leetcode.com/" + user.name)
+    except requests.exceptions.InvalidURL:
+        return 4
+
     html_doc = bs(r.content, 'html.parser')
 
     # Gets raw divs for user's number of completed problems by difficulty
@@ -66,7 +79,7 @@ def main():
         user.recent_problem = html_doc.find("span", class_=RECENT_PROBLEM_DIV_CLASS).get_text()
 
     # Prints user data
-    print(user)
+    return user
 
 
-main()
+uvicorn.run(app, host="localhost", port=8080)
