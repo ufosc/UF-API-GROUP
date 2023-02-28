@@ -1,0 +1,427 @@
+[
+  {
+    "type": "programming",
+    "setup": "Why do programmers prefer dark mode?",
+    "punchline": "Because light attracts bugs!"
+  },
+  {
+    "type": "programming",
+    "setup": "Why did the programmer quit his job?",
+    "punchline": "Because he didn't get arrays!"
+  },
+  {
+    "type": "programming",
+    "setup": "Why do programmers always mix up Christmas and Halloween?",
+    "punchline": "Because Oct 31 == Dec 25!"
+  },
+  {
+    "type": "programming",
+    "setup": "Why did the programmer go broke?",
+    "punchline": "Because he used up all his cache."
+  },
+  {
+    "type": "programming",
+    "setup": "Why did the Java programmer wear glasses?",
+    "punchline": " He couldn't C#."
+  },
+  {
+    "type": "programming",
+    "setup": "What do you call 8 hobbits?",
+    "punchline": "A hobbyte!"
+  },
+  {
+    "type": "programming",
+    "setup": "What do you call 8 hobbits?",
+    "punchline": "A hobbyte!"
+  },
+  {
+    "type": "programming",
+    "setup": "What do computers snack on between meals?",
+    "punchline": "Microchips!"
+  },
+  {
+    "type": "programming",
+    "setup": "Why was the JavaScript developer sad?",
+    "punchline": "Because he didn't Node how to Express himself!"
+  },
+  {
+    "type": "programming",
+    "setup": "What do computers and air conditioners have in common?",
+    "punchline": "They both become useless when you open windows!"
+  },
+  {
+    "type": "programming",
+    "setup": "What did the Java code say to the C code?",
+    "punchline": "You've got no class!"
+  },
+  {
+    "type": "programming",
+    "setup": "What do you call a singing computer?",
+    "punchline": "A-Dell!"
+  },
+  {
+    "type": "programming",
+    "setup": "What's the best thing about a Boolean?",
+    "punchline": "Even if you're wrong, you're only off by a bit."
+  },
+  {
+    "type": "programming",
+    "setup": "A SQL query walks into a bar, walks up to two tables and asks...",
+    "punchline": "'Can I join you?'"
+  },
+  {
+    "type": "programming",
+    "setup": "There are 10 types of people in this world...",
+    "punchline": "Those who understand binary and those who don't."
+  },
+  {
+    "type": "programming",
+    "setup": "What did the router say to the doctor?",
+    "punchline": "It hurts when IP."
+  },
+  {
+    "type": "programming",
+    "setup": "3 SQL statements walk into a NoSQL bar. Soon, they walk out",
+    "punchline": "They couldn't find a table."
+  },
+  {
+    "type": "programming",
+    "setup": "What is the most used language in programming?",
+    "punchline": "Profanity."
+  },
+  {
+    "type": "programming",
+    "setup": "Where did the API go to eat?",
+    "punchline": "To the RESTaurant."
+  },
+  {
+    "type": "programming",
+    "setup": "I just got fired from my job at the keyboard factory.",
+    "punchline": "They told me I wasn't putting in enough shifts."
+  },
+  {
+    "type": "programming",
+    "setup": "What's the object-oriented way to become wealthy?",
+    "punchline": "Inheritance"
+  },
+  {
+    "type": "programming",
+    "setup": "Where do programmers like to hangout?",
+    "punchline": "The Foo Bar."
+  },
+  {
+    "type": "general",
+    "setup": "What do elves post on Social Media?",
+    "punchline": "Elf-ies."
+  },
+  {
+    "type": "general",
+    "setup": "You see, mountains aren't just funny.",
+    "punchline": "They are hill areas."
+  },
+  {
+    "type": "halloween",
+    "setup": "Why didn't the skeleton go for prom?",
+    "punchline": "Because it had nobody."
+  },
+  {
+    "type": "general",
+    "setup": "Did you hear about the crime in the parking garage?",
+    "punchline": "It was wrong on so many levels."
+  },
+  {
+    "type": "general",
+    "setup": "Did you hear about the Viking who was reincarnated?",
+    "punchline": "He was Bjorn again"
+  },
+  {
+    "type": "general",
+    "setup": "Why does Waldo only wear stripes?",
+    "punchline": "Because he doesn't want to be spotted."
+  },
+  {
+    "type": "general",
+    "setup": "The Sergeant-Major growled at the young soldier: I didn't see you at camouflage training this morning.",
+    "punchline": "The soldier replied, \"Thank you very much, sir.\""
+  },
+  {
+    "type": "general",
+    "setup": "My older brother always tore the last pages of my comic books, and never told me why.",
+    "punchline": "I had to draw my own conclusions."
+  },
+  {
+    "type": "general",
+    "setup": "Why are Dad Jokes so good?",
+    "punchline": "Because the punchline is apparent."
+  },
+  {
+    "type": "general",
+    "setup": "What kind of music do welders like?",
+    "punchline": "Heavy metal."
+  },
+  {
+    "type": "animal",
+    "setup": "What do you call a bee that can't make up its mind?",
+    "punchline": "A maybe."
+   },
+  {
+    "type": "general",
+    "setup": "Why do valley girls hang out in odd numbered groups?",
+    "punchline": "Because they can't even."
+  },
+  {
+    "type": "general",
+    "setup": "Why do trees seem suspicious on sunny days?",
+    "punchline": "Dunno, they're just a bit shady."
+  },
+  {
+    "type": "math",
+    "setup": "Why do mathematicians hate the U.S.?",
+    "punchline": "Because it's indivisible."
+  },
+  {
+    "type": "animal",
+    "setup": "Why do ducks make great detectives?",
+    "punchline": "They always quack the case."
+  },
+  {
+    "type": "animal",
+    "setup": "Why do crabs never give to charity?",
+    "punchline": "Because they're shellfish."
+  },
+  {
+    "type": "animal",
+    "setup": "Why do birds fly south for the winter?",
+    "punchline": "Because it's too far to walk."
+  },
+  {
+    "type": "animal",
+    "setup": "Why do bees have sticky hair?",
+    "punchline": "Because they use honey combs!"
+  },
+  {
+    "type": "animal",
+    "setup": "Why do bears have hairy coats?",
+    "punchline": "Fur protection."
+  },
+  {
+    "type": "food",
+    "setup": "Why didn't the orange win the race?",
+    "punchline": "It ran out of juice."
+  },
+  {
+    "type": "math",
+    "setup": "Why didn't the number 4 get into the nightclub?",
+    "punchline": "Because he is 2 square."
+  },
+  {
+    "type": "food",
+    "setup": "Why did the worker get fired from the orange juice factory?",
+    "punchline": "Lack of concentration."
+  },
+  {
+    "type": "food",
+    "setup": "Why did the tomato blush?",
+    "punchline": "Because it saw the salad dressing."
+  },
+  {
+    "type": "general",
+    "setup": "Why did the scarecrow win an award?",
+    "punchline": "Because he was outstanding in his field."
+  },
+  {
+    "type": "animal",
+    "setup": "Why did the octopus beat the shark in a fight?",
+    "punchline": "Because it was well armed."
+  },
+  {
+    "type": "food",
+    "setup": "Why did the melons plan a big wedding?",
+    "punchline": "Because they cantaloupe!"
+  },
+  {
+    "type": "general",
+    "setup": "Why did the kid cross the playground?",
+    "punchline": "To get to the other slide."
+  },
+  {
+    "type": "general",
+    "setup": "Why did the house go to the doctor?",
+    "punchline": "It was having window panes."
+  },
+  {
+    "type": "general",
+    "setup": "Why did the fireman wear red, white, and blue suspenders?",
+    "punchline": "To hold his pants up."
+  },
+  {
+    "type": "food",
+    "setup": "Why did the coffee file a police report?",
+    "punchline": "It got mugged."
+  },
+  {
+    "type": "animal",
+    "setup": "Why did the chicken get a penalty?",
+    "punchline": "For fowl play."
+  },
+  {
+    "type": "general",
+    "setup": "Why did the burglar hang his mugshot on the wall?",
+    "punchline": "To prove that he was framed!"
+  },
+  {
+    "type": "general",
+    "setup": "Why did the A go to the bathroom and come out as an E?",
+    "punchline": "Because he had a vowel movement."
+  },
+  {
+    "type": "halloween",
+    "setup": "Why did Dracula lie in the wrong coffin?",
+    "punchline": "He made a grave mistake."
+  },
+  {
+    "type": "general",
+    "setup": "Why couldn't the lifeguard save the hippie?",
+    "punchline": "He was too far out, man."
+  },
+  {
+    "type": "general",
+    "setup": "Why couldn't the kid see the pirate movie?",
+    "punchline": "Because it was rated arrr!"
+  },
+  {
+    "type": "animal",
+    "setup": "Why can't you hear a pterodactyl go to the bathroom?",
+    "punchline": "The p is silent."
+  },
+  {
+    "type": "general",
+    "setup": "Why can't your nose be 12 inches long?",
+    "punchline": "Because then it'd be a foot!"
+  },
+  {
+    "type": "general",
+    "setup": "Why can't you use \"beef stew\"as a password?",
+    "punchline": "Because it's not stroganoff."
+  },
+  {
+    "type": "halloween",
+    "setup": "Why are graveyards so noisy?",
+    "punchline": "Because of all the coffin."
+  },
+  {
+    "type": "animal",
+    "setup": "Why do pandas like old movies?",
+    "punchline": "Because they’re in black and white."
+  },
+  {
+    "type": "animal",
+    "setup": "You have to be extra careful after it rains cats and dogs.",
+    "punchline": "You really don’t want to accidentally step in a Poodle."
+  },
+  {
+    "type": "animal",
+    "setup": "Learning to sleep upside down is often hard for baby bats.",
+    "punchline": "But they soon get the hang of it."
+  },
+  {
+    "type": "animal",
+    "setup": "What do phones and dogs have in common?",
+    "punchline": "They both have collar I.D."
+  },
+  {
+    "type": "animal",
+    "setup": "What did the alien say to the cat?",
+    "punchline": "\"Take me to your litter.\""
+  },
+  {
+    "type": "animal",
+    "setup": "What do you call a cow with no legs?",
+    "punchline": "Ground beef."
+  },
+  {
+    "type": "general",
+    "setup": "Give a man a duck and he’ll eat for a day.",
+    "punchline": "Teach a man to duck and he’ll never walk into a bar."
+  },
+  {
+    "type": "animal",
+    "setup": "What’s the difference between a cat and a comma?",
+    "punchline": "One has claws at the end of its paws, while the other is a pause at the end of a clause."
+  },
+  {
+    "type": "animal",
+    "setup": "What does a clam do on his birthday?",
+    "punchline": "He shellabrates!"
+  },
+  {
+    "type": "animal",
+    "setup": "How do you count cows?",
+    "punchline": "With a cowculator."
+  },
+  {
+    "type": "math",
+    "setup": "What do you get if you divide the circumference of a jack-o-lantern by its diameter?",
+    "punchline": "Pumpkin pi."
+  },
+  {
+    "type": "math",
+    "setup": "Why did the student get upset when his teacher called him average?",
+    "punchline": "It was a mean thing to say!"
+  },
+  {
+    "type": "math",
+    "setup": "Why was the math textbook depressed?",
+    "punchline": "Because it had a lot of problems."
+  },
+  {
+    "type": "math",
+    "setup": "Why should you never talk to infinity?",
+    "punchline": "Because it'll go on and on forever."
+  },
+  {
+    "type": "math",
+    "setup": "Never trust math teachers who use graph paper.",
+    "punchline": "They’re always plotting something."
+  },
+  {
+    "type": "food",
+    "setup": "Did you hear about the restaurant on the moon?",
+    "punchline": "Great food, no atmosphere."
+  },
+  {
+    "type": "food",
+    "setup": "What does a baker put on his bed?",
+    "punchline": "Cookie sheets."
+  },
+  {
+    "type": "food",
+    "setup": "I hate jokes about German sausages.",
+    "punchline": "They’re the wurst."
+  },
+  {
+    "type": "halloween",
+    "setup": "What did the skeleton say to the vampire and the vacuum cleaner?",
+    "punchline": "\"You both suck.\""
+  },
+  {
+    "type": "halloween",
+    "setup": "What’s a skeleton’s least favorite room in the house?",
+    "punchline": "The living room."
+  },
+  {
+    "type": "halloween",
+    "setup": "What does the ghost call his true love?",
+    "punchline": "His ghoul-friend."
+  },
+  {
+    "type": "halloween",
+    "setup": "How did the zombie become great at trick or treating?",
+    "punchline": "Dead-ication."
+  },
+  {
+    "type": "halloween",
+    "setup": "What does a turkey dress up as on Halloween?",
+    "punchline": "A goblin."
+  }
+]
