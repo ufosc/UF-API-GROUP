@@ -53,7 +53,7 @@ def leetcodeScrape(username: str):
     try:
         r = requests.get("https://leetcode.com/" + user.name)
     except requests.exceptions.InvalidURL:
-        return 4
+        return -1
 
     html_doc = bs(r.content, 'html.parser')
 
