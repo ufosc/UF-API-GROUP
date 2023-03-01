@@ -11,10 +11,10 @@ if __name__ == "__main__":
     app = FastAPI()
     from leetcode_constants import *
 else:
-    app = APIRouter(prefix="/lcapi")
+    app = APIRouter()
     from .leetcode_constants import *
 
-@app.get("/{username}")
+@app.get("/lcapi/{username}")
 def read_item(username: str):
     return leetcodeScrape(username)
 
