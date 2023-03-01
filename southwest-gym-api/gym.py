@@ -4,7 +4,7 @@ from datetime import datetime
 
 import aiohttp
 from bs4 import BeautifulSoup
-from fastapi import FastAPI
+from fastapi import FastAPI, APIRouter
 from fastapi_cache import FastAPICache
 from fastapi_cache.backends.inmemory import InMemoryBackend
 from fastapi_cache.decorator import cache
@@ -36,8 +36,10 @@ class PlaceData(BaseModel):
     last_updated: datetime
 
 
-app = FastAPI()
-
+if __name__ == "__main__":
+    app = FastAPI()
+else:
+    app = APIRouter(prefix="/gymstats")
 
 @app.get("/")
 @cache(expire=60 * 5)
@@ -124,4 +126,5 @@ async def startup():
     FastAPICache.init(InMemoryBackend(), prefix="fastapi-cache")
 
 
-uvicorn.run(app, host="localhost", port=8080)
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8080)

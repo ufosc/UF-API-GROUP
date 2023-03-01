@@ -1,13 +1,20 @@
 import requests
 import uvicorn
 from bs4 import BeautifulSoup as bs
-from typing import Union
-from fastapi import FastAPI
-from leetcode_constants import *
+from fastapi import FastAPI, APIRouter
 
-app = FastAPI()
+# triya note - unique to this project is a problem of relative imports -
+# if we run the file itself, from leetcode_constants import * works,
+# but running it from main.py from the parent directory will not
+# this is just accounting for that
+if __name__ == "__main__":
+    app = FastAPI()
+    from leetcode_constants import *
+else:
+    app = APIRouter(prefix="/lcapi")
+    from .leetcode_constants import *
 
-@app.get("/lcapi/{username}")
+@app.get("/{username}")
 def read_item(username: str):
     return leetcodeScrape(username)
 
@@ -82,4 +89,5 @@ def leetcodeScrape(username: str):
     return user
 
 
-uvicorn.run(app, host="localhost", port=8080)
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8080)
