@@ -28,13 +28,13 @@ def read_root():
 @app.get("/items/{item_id}")
 def read_item(item_id: int, q: Union[str, None] = None):
     return {"item_id": item_id, "q": q}
-	
+
 ```
 
 And voila! If you run `uvicorn main:app --reload` in your terminal, it should get a test server up and running on
 http://127.0.0.1:8000.
 
 # How can I contribute?
-There are many great ways to contribute. 
-The best way would be to familiarize yourself with FastAPI and come up with a cool API idea, code it up and send a pull request. 
+There are many great ways to contribute.
+The best way would be to familiarize yourself with FastAPI and come up with a cool API idea, code it up and send a pull request.
 This set to be a large repository containing numerous different APIs with all different purposes - get creative!
