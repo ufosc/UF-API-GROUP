@@ -1,0 +1,5 @@
+{
+	"profanity_check": true,
+	"banned_words": ["offensive", "political"],
+	"open_ai_key": ""
+}
