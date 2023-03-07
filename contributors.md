@@ -1,4 +1,4 @@
-# Contributor
+# Contributors
 - cbloodsworth
 - PythiaUF
 - CMunjed
