@@ -10,6 +10,7 @@ from fastapi import APIRouter, FastAPI
 def remove_prefix(text: str, prefix: str):
     return text[len(prefix) :] if text.startswith(prefix) else text
 
+
 app = FastAPI()
 
 parent_name = str(Path(__file__).parent.as_posix())
@@ -20,14 +21,14 @@ for a_path in paths_of_python_files:
 
     # so we have the actual full path of the file now, which is great
     # but what we want to do is make this a relative path compared to main
-    # what we do is remove the path up to the directory this file is in 
+    # what we do is remove the path up to the directory this file is in
     # (and remove the / after that too), remove the .py at the end, and make
     # slashes to periods
     # for example: UF-API-GROUP/directory/file.py becomes directory.file
     as_module = remove_prefix(actual_path, parent_name)[1:]
     as_module = as_module[:-3]
     as_module = as_module.replace("/", ".")
-    
+
     # just in case
     module_name = importlib.util.resolve_name(as_module, None)
 

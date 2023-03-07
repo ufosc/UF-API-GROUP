@@ -12,7 +12,9 @@ from pydantic import BaseModel
 import uvicorn
 
 
-SOUTHWEST_GYM_URL = "https://connect2concepts.com/connect2/?type=circle&key=8E2C21D2-6F5D-45C1-AF9E-C23AEBFDA68B"
+SOUTHWEST_GYM_URL = (
+    "https://connect2concepts.com/connect2/?type=circle&key=8E2C21D2-6F5D-45C1-AF9E-C23AEBFDA68B"
+)
 
 
 # python 3.8 doesn't have this natively :(
@@ -40,6 +42,7 @@ if __name__ == "__main__":
     app = FastAPI()
 else:
     app = APIRouter(prefix="/gymstats")
+
 
 @app.get("/")
 @cache(expire=60 * 5)
@@ -91,22 +94,16 @@ async def gymstats() -> typing.List[PlaceData]:
 
         # the count for the place is after the "Last Count: " string always and before the next br
         place_count = int(
-            place_text.split("Last Count: ", maxsplit=1)[1]
-            .split("<br/>", maxsplit=1)[0]
-            .strip()
+            place_text.split("Last Count: ", maxsplit=1)[1].split("<br/>", maxsplit=1)[0].strip()
         )
 
         # the last updated string is in a weird format
         # first we want to get it, then convert it to a more standard datetime
         # orjson will handle converting it to an iso string
         place_last_updated_str = (
-            place_text.split("Updated: ", maxsplit=1)[1]
-            .split("</div>", maxsplit=1)[0]
-            .strip()
+            place_text.split("Updated: ", maxsplit=1)[1].split("</div>", maxsplit=1)[0].strip()
         )
-        place_last_updated = datetime.strptime(
-            place_last_updated_str, "%m/%d/%Y %I:%M %p"
-        )
+        place_last_updated = datetime.strptime(place_last_updated_str, "%m/%d/%Y %I:%M %p")
 
         place_data.append(
             PlaceData(
