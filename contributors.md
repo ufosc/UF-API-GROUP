@@ -1,8 +1,8 @@
 # Contributor
-cbloodsworth
-PythiaUF
-CMunjed
-RetroSpaceMan123
-fu-jo
-MesaJonathan
-TheShmill
+- cbloodsworth
+- PythiaUF
+- CMunjed
+- RetroSpaceMan123
+- fu-jo
+- MesaJonathan
+- TheShmill
