@@ -30,6 +30,7 @@ categorized_jokes = {
     "general": [j for j in jokes if j["type"] == "general"],
 }
 
+
 @app.get(API_NAME + "/")
 def read_root():
     return {
@@ -41,6 +42,7 @@ def read_root():
 @app.get(API_NAME + "/random")
 def get_random_joke():
     return random.choice(jokes)
+
 
 @app.get(API_NAME + "/ai")
 def get_random_ai_joke():
@@ -54,6 +56,7 @@ def get_random_ai_joke():
         presence_penalty=1,
     )
     return response["choices"][0]["text"]
+
 
 @app.get(API_NAME + "/ai/{category}")
 def get_ai_joke(category: str):
@@ -71,6 +74,7 @@ def get_ai_joke(category: str):
         presence_penalty=1,
     )
     return response["choices"][0]["text"]
+
 
 @app.get(API_NAME + "/{category}")
 def get_joke(category: str):

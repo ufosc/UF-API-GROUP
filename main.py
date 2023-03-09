@@ -6,6 +6,7 @@ from pathlib import Path
 import uvicorn
 from fastapi import APIRouter, FastAPI
 
+
 # python 3.8 doesn't have this natively :(
 def remove_prefix(text: str, prefix: str):
     return text[len(prefix) :] if text.startswith(prefix) else text
