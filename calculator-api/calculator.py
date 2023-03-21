@@ -42,7 +42,7 @@ async def api_pow(operands: Operands):  # Finds the power of x and y
 
 @app.post("/root")
 async def api_root(operands: Operands):  # Finds the root of x and y
-    return operands.x**(1/operands.y)
+    return operands.x ** (1 / operands.y)
 
 
 @app.post("/log")
