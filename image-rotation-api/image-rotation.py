@@ -1,8 +1,12 @@
-from fastapi import FastAPI, UploadFile, Response
+from fastapi import FastAPI, UploadFile, Response, APIRouter
 from PIL import Image
 import uvicorn
 
-app = FastAPI()
+
+if __name__ == "__main__":
+    app = FastAPI()
+else:
+    app = APIRouter()
 
 
 # Prompts the user to select their image file
