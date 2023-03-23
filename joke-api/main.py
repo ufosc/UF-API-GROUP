@@ -1,19 +1,22 @@
 from fastapi import FastAPI
 from profanity import profanity
-
+from pathlib import Path
+from fastapi import APIRouter
 import json
 import random
 import openai
 
-app = FastAPI()
+if __name__ == "__main__":
+    app = FastAPI()
+else:
+    app = APIRouter()
 
 jokes = []
 
-with open("final_jokes.json") as f:
-    jokes = json.loads(f.read())
+API_NAME = "/jokes"
 
-with open("config.json") as g:
-    config = json.loads(g.read())
+jokes = json.loads(open(f"{Path(__file__).parent.as_posix()}/final_jokes.json", "r").read())
+config = json.loads(open(f"{Path(__file__).parent.as_posix()}/config.json", "r").read())
 
 banned_words = config["banned_words"]
 profanity_check = config["profanity_check"]
@@ -28,30 +31,21 @@ categorized_jokes = {
 }
 
 
-@app.get("/")
+@app.get(API_NAME + "/")
 def read_root():
     return {
         "Joke categories": ["general", "animal", "food", "math", "programming"],
-        "Usage": ["/jokes", "/jokes/{category}", "/ai_joke", "/ai_joke/{category}"],
+        "Usage": ["/random", "/{category}", "/ai", "/ai/{category}"],
     }
 
 
-@app.get("/joke")
-def get_joke():
+@app.get(API_NAME + "/random")
+def get_random_joke():
     return random.choice(jokes)
 
 
-@app.get("/joke/{category}")
-def get_joke(category: str):
-    try:
-        j = random.choice(categorized_jokes[category])
-        return j
-    except:
-        return {"Error": "Category does not exist."}
-
-
-@app.get("/ai_joke")
-def get_ai_joke():
+@app.get(API_NAME + "/ai")
+def get_random_ai_joke():
     response = openai.Completion.create(
         model="text-davinci-003",
         prompt="tell me a joke",
@@ -64,7 +58,7 @@ def get_ai_joke():
     return response["choices"][0]["text"]
 
 
-@app.get("/ai_joke/{category}")
+@app.get(API_NAME + "/ai/{category}")
 def get_ai_joke(category: str):
     if category in config["banned_words"] or (
         profanity_check and profanity.contains_profanity(category)
@@ -80,6 +74,15 @@ def get_ai_joke(category: str):
         presence_penalty=1,
     )
     return response["choices"][0]["text"]
+
+
+@app.get(API_NAME + "/{category}")
+def get_joke(category: str):
+    try:
+        j = random.choice(categorized_jokes[category])
+        return j
+    except:
+        return {"Error": "Category does not exist."}
 
 
 # uvicorn main:app --reload
