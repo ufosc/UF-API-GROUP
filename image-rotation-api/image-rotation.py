@@ -8,6 +8,7 @@ if __name__ == "__main__":
 else:
     app = APIRouter()
 
+
 # Prompts the user to select their image file
 @app.post(
     "/rotate-image",
