@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI, APIRouter
 from pydantic import BaseModel
 from math import log
@@ -51,3 +52,7 @@ async def api_root(operands: Operands):  # Finds the root of x and y
 @app.post("calc/log")
 async def api_log(operands: Operands):  # Finds the log of x base y
     return log(operands.x, operands.y)
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8000)
