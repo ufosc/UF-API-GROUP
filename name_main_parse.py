@@ -87,6 +87,8 @@ if __name__ == "__main__":
             else:
                 continue
 
+        a_match = None
+
         if not found_fastapi_main:
             if a_match := FASTAPI_INIT.search(text):
                 text = FASTAPI_INIT.sub(replace_old_init, text)
@@ -98,9 +100,13 @@ if __name__ == "__main__":
             text = text.strip()
             if "import uvicorn" not in text:
                 text = "import uvicorn\n" + text
-            text += (
-                '\n\nif __name__ == "__main__":\n    uvicorn.run(app, host="localhost", port=8000)'
-            )
+
+            if not a_match:
+                # if we didn't find a match beforehand, we need to find it now
+                a_match = FASTAPI_INIT.search(text)
+
+            app_name = a_match["app_name"] if a_match else "app"
+            text += f'\n\nif __name__ == "__main__":\n    uvicorn.run({app_name}, host="localhost", port=8000)'
 
         text = text.strip()
         f.seek(0)
