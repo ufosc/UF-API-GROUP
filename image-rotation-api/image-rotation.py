@@ -1,4 +1,5 @@
-from fastapi import FastAPI, UploadFile, Response, APIRouter
+from fastapi import FastAPI, UploadFile, APIRouter
+from fastapi.responses import StreamingResponse
 from PIL import Image
 import uvicorn
 import io
@@ -11,11 +12,7 @@ else:
 
 
 # Prompts the user to select their image file
-@app.post(
-    "/rotate-image",
-    responses={200: {"content": {"image/png": {}}}},
-    response_class=Response,
-)
+@app.post("/rotate-image")
 async def create_upload_file(file: UploadFile):
     # error handling if nothing uploaded
     if file.filename == "":
@@ -35,7 +32,7 @@ async def create_upload_file(file: UploadFile):
     new_image.seek(0)
 
     # return image
-    return Response(content=new_image.read(), media_type=file.content_type)
+    return StreamingResponse(content=new_image, media_type=file.content_type)
 
 
 if __name__ == "__main__":
