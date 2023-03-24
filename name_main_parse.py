@@ -4,7 +4,7 @@ import ast
 import logging
 import argparse
 
-FASTAPI_INIT = re.compile(r"(?P<app_name>\w+) ?= ? FastAPI\((?P<api_params>.*)\)")
+FASTAPI_INIT = re.compile(r"(?P<app_name>\w+) ?= ?FastAPI\((?P<api_params>.*)\)")
 
 
 def replace_old_init(a_match: re.Match) -> str:
