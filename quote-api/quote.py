@@ -1,3 +1,4 @@
+import uvicorn
 from pathlib import Path
 from fastapi import FastAPI, APIRouter
 from random import randint
@@ -24,3 +25,7 @@ async def get_quote():
     fixed_category = answer[2][0 : len(answer[2]) - 1]
     answer[2] = fixed_category
     return {"quote": answer[0], "author": answer[1], "category": answer[2]}
+
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8000)
