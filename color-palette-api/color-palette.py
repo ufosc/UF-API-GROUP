@@ -59,10 +59,10 @@ def medium_cut_algorithm(colors, depth):
         else:
             colors.sort(key=lambda col: col[2])
 
-        palette_color = medium_cut_algorithm(colors[:len(colors) // 2], (depth - 1))
+        palette_color = medium_cut_algorithm(colors[: len(colors) // 2], (depth - 1))
         palette = palette + palette_color
         palette.remove([0, 0, 0])
-        palette_color = medium_cut_algorithm(colors[len(colors) // 2:], (depth - 1))
+        palette_color = medium_cut_algorithm(colors[len(colors) // 2 :], (depth - 1))
         palette = palette + palette_color
 
     return palette
@@ -84,7 +84,7 @@ async def grab_color_palette(file: UploadFile):
         return {"error": "File is not an image"}
 
     # get the colors of the file
-    colors = list(Image.open(file.file).convert('RGB').getdata())
+    colors = list(Image.open(file.file).convert("RGB").getdata())
 
     # use the Median Cut algorithm to get a color palette
     palette = medium_cut_algorithm(colors, 4)  # Returns 2^depth colors
