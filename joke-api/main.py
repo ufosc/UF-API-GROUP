@@ -1,3 +1,4 @@
+import uvicorn
 from fastapi import FastAPI
 from profanity import profanity
 from pathlib import Path
@@ -86,3 +87,6 @@ def get_joke(category: str):
 
 
 # uvicorn main:app --reload
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="localhost", port=8000)
