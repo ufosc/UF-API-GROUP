@@ -1,5 +1,5 @@
 # Contributors
-- cbloodsworth
+- cbloodsworth (Chris)
 - PythiaUF
 - CMunjed
 - RetroSpaceMan123
