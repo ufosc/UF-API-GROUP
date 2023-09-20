@@ -18,7 +18,7 @@ hiredis==2.2.3
 idna==3.4
 multidict==6.0.4
 mypy-extensions==1.0.0
-openai==0.27.1
+openai==0.28.0
 packaging==23.0
 pathspec==0.11.0
 pendulum==2.1.2
