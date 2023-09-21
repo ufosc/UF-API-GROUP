@@ -36,3 +36,4 @@ urllib3==2.0.4
 uvicorn==0.20.0
 yarl==1.8.2
 Pillow==10.0.1
+python-multipart==0.0.6
