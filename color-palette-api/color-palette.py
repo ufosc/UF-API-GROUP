@@ -95,12 +95,12 @@ async def grab_color_palette(file: UploadFile):
     x = 0
     y = 0
     d = ImageDraw.Draw(output)
-    for i in palette :
-        d.rectangle([x, y, x+50, y+50], tuple(i), None, 1)
-        x+=50 
-        if(x==200) :
-            x=0
-            y+=50
+    for i in palette:
+        d.rectangle([x, y, x + 50, y + 50], tuple(i), None, 1)
+        x += 50
+        if x == 200:
+            x = 0
+            y += 50
     # creates a holder to store the image
     new_image = io.BytesIO()
     # saves output to it?
