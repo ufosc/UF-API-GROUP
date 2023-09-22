@@ -88,21 +88,20 @@ async def grab_color_palette(file: UploadFile):
 
     # use the Median Cut algorithm to get a color palette
     palette = medium_cut_algorithm(colors, 4)  # Returns 2^depth colors
-    
+
     # draw an image showing the pallete
     output = Image.new("RGB", (200, 200), (255, 255, 255, 0))
-    x = 0;
-    y = 0;
+    x = 0
+    y = 0
     d = ImageDraw.Draw(output)
-    for i in palette :
-        d.rectangle([x, y, x+50, y+50], tuple(i), None, 1)
-        x+=50 
-        if(x==200) :
-            x=0
-            y+=50
-    
-    output.show();
+    for i in palette:
+        d.rectangle([x, y, x + 50, y + 50], tuple(i), None, 1)
+        x += 50
+        if x == 200:
+            x = 0
+            y += 50
 
+    output.show()
 
     # return color palette
     return JSONResponse(palette)
