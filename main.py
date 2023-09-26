@@ -26,7 +26,9 @@ for a_path in paths_of_python_files:
     # (and remove the / after that too), remove the .py at the end, and make
     # slashes to periods
     # for example: UF-API-GROUP/directory/file.py becomes directory.file
-    as_module = remove_prefix(actual_path, parent_name)[1:]
+    as_module = remove_prefix(actual_path, parent_name)
+    if as_module[0] == "/":
+        as_module = as_module[1:]
     as_module = as_module[:-3]
     as_module = as_module.replace("/", ".")
 
