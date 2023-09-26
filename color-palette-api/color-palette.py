@@ -1,7 +1,8 @@
 from fastapi import FastAPI, UploadFile, Response, APIRouter
-from fastapi.responses import JSONResponse
-from PIL import Image
+from fastapi.responses import StreamingResponse
+from PIL import Image, ImageDraw
 import uvicorn
+import io
 
 
 if __name__ == "__main__":
@@ -89,8 +90,25 @@ async def grab_color_palette(file: UploadFile):
     # use the Median Cut algorithm to get a color palette
     palette = medium_cut_algorithm(colors, 4)  # Returns 2^depth colors
 
+    # draw an image showing the pallete
+    output = Image.new("RGB", (200, 200), (255, 255, 255, 0))
+    x = 0
+    y = 0
+    d = ImageDraw.Draw(output)
+    for i in palette:
+        d.rectangle([x, y, x + 50, y + 50], tuple(i), None, 1)
+        x += 50
+        if x == 200:
+            x = 0
+            y += 50
+    # creates a holder to store the image
+    new_image = io.BytesIO()
+    # saves output to it?
+    output.save(new_image, format=file.content_type[6:], optimize=True)
+    new_image.seek(0)
+
     # return color palette
-    return JSONResponse(palette)
+    return StreamingResponse(content=new_image, media_type="image/jpeg")
 
 
 if __name__ == "__main__":
