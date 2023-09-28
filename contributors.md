@@ -6,3 +6,4 @@
 - fu-jo
 - MesaJonathan
 - TheShmill
+- pre-commit ci
