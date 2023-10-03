@@ -19,6 +19,29 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    pip install fastapi[all]
    ```
+
+### Running
+
+1. Run the program from the file location on your machine
+   ```sh
+   python quote.py
+   ```
+2. Navigate to the url in your browser
+   ```sh
+   http://localhost:8000/quote
+   ```
+
+### PATH Variable
+
+If you are getting and import error when attemping to run the program saying that it can not find the modules to import, then the program may not be looking in the right locations for those packages. To check where the program is looking for the packages it needs, add these lines at the top of the program and run it:
+```sh
+import sys
+print(sys.path)
+```
+If the file locations of where you have the packages installed is not listed when you attempt to run the prgram now, then you need to add those file locations to your system's PATH variable.
+
+Learn more about PATH variables and how to edit them <a href="https://www.java.com/en/download/help/path.html">here.</a>
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## Acknowledgments
