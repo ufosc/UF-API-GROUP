@@ -5,6 +5,7 @@ from pathlib import Path
 
 import uvicorn
 from fastapi import APIRouter, FastAPI
+from fastapi.responses import RedirectResponse
 
 
 # python 3.8 doesn't have this natively :(
@@ -13,6 +14,12 @@ def remove_prefix(text: str, prefix: str):
 
 
 app = FastAPI()
+
+
+@app.get("/")
+async def redirect_to_docs():
+    return RedirectResponse("/docs", status_code=308)
+
 
 parent_name = str(Path(__file__).parent.as_posix())
 paths_of_python_files = Path(__file__).parent.glob("*/*.py")
