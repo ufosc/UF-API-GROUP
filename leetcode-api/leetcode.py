@@ -1,5 +1,9 @@
 import requests
 import uvicorn
+from selenium.webdriver import Chrome, ChromeOptions
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 from bs4 import BeautifulSoup as bs
 from fastapi import FastAPI, APIRouter
 
@@ -60,6 +64,18 @@ def leetcodeScrape(username: str):
     # Get the user's LC URL
     user.name = username
 
+    # Initialize browser options for Selenium
+    browser_options = ChromeOptions()
+    
+    # Enables headless mode for Selenium
+    browser_options.add_argument("--headless=new")
+
+    # Initialize Chrome web driver using browser options
+    driver = Chrome(options=browser_options)
+
+    # Opens URL using the web driver
+    driver.get("https://leetcode.com/" + user.name)
+
     # Get Raw HTML
     try:
         r = requests.get("https://leetcode.com/" + user.name)
@@ -82,12 +98,15 @@ def leetcodeScrape(username: str):
     user.rank = int(raw_rank.replace(",", ""))
 
     # Get the most recent problem, if any
-    raw_recent = html_doc.find("span", class_=RECENT_DIV_CLASS).get_text()
+    raw_recent = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, RECENT_DIV_CLASS))).text
 
     # If submitted recently (LC uses the format "23 hours ago" or "1 day ago")
     user.recent = "hour" in raw_recent
     if user.recent:
-        user.recent_problem = html_doc.find("span", class_=RECENT_PROBLEM_DIV_CLASS).get_text()
+        user.recent_problem = driver.find_element(By.XPATH, RECENT_PROBLEM_DIV_CLASS).text
+
+    # Shutdown web driver
+    driver.quit()
 
     # Prints user data
     return user
