@@ -66,7 +66,7 @@ def leetcodeScrape(username: str):
 
     # Initialize browser options for Selenium
     browser_options = ChromeOptions()
-    
+
     # Enables headless mode for Selenium
     browser_options.add_argument("--headless=new")
 
@@ -98,7 +98,11 @@ def leetcodeScrape(username: str):
     user.rank = int(raw_rank.replace(",", ""))
 
     # Get the most recent problem, if any
-    raw_recent = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, RECENT_DIV_CLASS))).text
+    raw_recent = (
+        WebDriverWait(driver, 10)
+        .until(EC.element_to_be_clickable((By.XPATH, RECENT_DIV_CLASS)))
+        .text
+    )
 
     # If submitted recently (LC uses the format "23 hours ago" or "1 day ago")
     user.recent = "hour" in raw_recent
